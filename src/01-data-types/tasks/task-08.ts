@@ -14,10 +14,28 @@
 | 13:00 | 31.1             |
 | 14:00 | 30.7             |
 | 15:00 | 29.3             |
-
+ 
  * Task:
  * 
  * 1. Define a proper type for the temperature information.
  * 2. Store the temperature data in a single collection.
  * 3. Display the temperature data using console.log.
  */
+
+type TemperatureRecord = {
+   time: string;
+   celsius: number;
+};
+
+const Temperature: TemperatureRecord[] = [
+   { time: "08:00", celsius: 24.5 },
+   { time: "09:00", celsius: 25.1 },
+   { time: "10:00", celsius: 26.8 },
+   { time: "11:00", celsius: 28.4 },
+   { time: "12:00", celsius: 30.2 },
+   { time: "13:00", celsius: 31.1 },
+   { time: "14:00", celsius: 30.7 },
+   { time: "15:00", celsius: 29.3 },
+];
+
+console.log(Temperature);

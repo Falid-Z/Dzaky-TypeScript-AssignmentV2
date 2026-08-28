@@ -16,7 +16,13 @@
  */
 
 const studentName: string = "Nadia Putri";
-const studentID: string = "ST2026045";
+const studentID: string = "STD2026045";
+const scores: number[] = [88.5, 84, 91.5, 100];
+const subjects: Array<string> = ["Assignments", "Midterm Exam", "Final Exam", "Attendance"];
+const extracurricularActivities: boolean = true;
 
-console.log(studentName)
-console.log(studentID)
+console.log("Student Name:", studentName);
+console.log("Student ID:", studentID);
+console.log("Scores:", scores);
+console.log("Subjects:", subjects);
+console.log("Extracurricular Activities:", extracurricularActivities);
