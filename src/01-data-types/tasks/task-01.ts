@@ -18,7 +18,7 @@
 const studentName: string = "Nadia Putri";
 const studentID: string = "STD2026045";
 const scores: number[] = [88.5, 84, 91.5, 100];
-const subjects: Array<string> = ["Assignments", "Midterm Exam", "Final Exam", "Attendance"];
+const subjects:  string[] = ["Assignments", "Midterm Exam", "Final Exam", "Attendance"];
 const extracurricularActivities: boolean = true;
 
 console.log("Student Name:", studentName);

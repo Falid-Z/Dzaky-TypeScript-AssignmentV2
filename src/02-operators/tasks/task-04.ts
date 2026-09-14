@@ -22,3 +22,34 @@
  *  - Calculate the final payment.
 
  */
+
+const keyboardPrice = 850000;
+const keyboardQuantity = 1;
+const mousePrice = 275000;
+const mouseQuantity = 2;
+const mousepadPrice = 120000;
+const mousepadQuantity = 1;
+const premiumMember = true;
+
+const subtotal =
+  keyboardPrice * keyboardQuantity +
+  mousePrice * mouseQuantity +
+  mousepadPrice * mousepadQuantity;
+
+let totalItems = 0;
+totalItems += keyboardQuantity;
+totalItems += mouseQuantity;
+totalItems += mousepadQuantity;
+
+const isDiscountApplied = subtotal > 1000000;
+const discount = isDiscountApplied ? subtotal * 0.1 : 0;
+const shippingCost = premiumMember ? 0 : 20000;
+
+const finalPayment = subtotal - discount + shippingCost;
+
+console.log("Subtotal:", subtotal);
+console.log("Total Items:", totalItems);
+console.log("Discount Applied:", isDiscountApplied);
+console.log("Discount:", discount);
+console.log("Shipping Cost:", shippingCost);
+console.log("Final Payment:", finalPayment);

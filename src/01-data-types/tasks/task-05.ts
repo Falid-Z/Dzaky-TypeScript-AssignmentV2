@@ -50,6 +50,4 @@ const employee3: Attendance = {
     isPresent: false,
 };
 
-console.log(employee1);
-console.log(employee2);
-console.log(employee3);
+console.log(employee1, employee2, employee3);

@@ -10,7 +10,16 @@
  * 
  * display the book data using console.log.
  */
-const book1 = {
+type Book = {
+  ISBN: string;
+  title: string;
+  author: string;
+  totalPages: number;
+  category: string;
+  isAvailable: boolean;
+};
+
+const book1: Book = {
   ISBN: "978-3-16-148410-0",
   title: "Moby Dick",
   author: "Herman Melville",

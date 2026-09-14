@@ -10,6 +10,13 @@
  * display the student data using console.log.
  */
 
+type Student = {
+  studentID: string;
+  fullName: string;
+  age: number;
+  isActive: boolean;
+};
+
 const student1 = {
   studentID: "ST2026044",
   fullName: "Tomoyo Sakagami",

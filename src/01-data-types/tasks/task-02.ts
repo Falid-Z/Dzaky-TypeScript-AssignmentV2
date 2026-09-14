@@ -27,7 +27,7 @@ const discountedPrice: number = originalPrice - (originalPrice * discountPercent
 console.log("Product Name:", productName);
 console.log("Product Code:", productCode);
 console.log("Original Price:", originalPrice);
-console.log("Discount Percentage:", discountPercentage);
+console.log("Discount Percentage:", discountPercentage + "%" );
 console.log("Quantity:", quantity);
 console.log("Is Premium Member:", premiumMember);
 console.log("Stock Available:", stockAvailable);
