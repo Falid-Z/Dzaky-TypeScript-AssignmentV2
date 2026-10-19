@@ -10,7 +10,7 @@
  * 
  * display the book data using console.log.
  */
-type Book = {
+type book = {
   ISBN: string;
   title: string;
   author: string;
@@ -19,7 +19,7 @@ type Book = {
   isAvailable: boolean;
 };
 
-const book1: Book = {
+const book1: book = {
   ISBN: "978-3-16-148410-0",
   title: "Moby Dick",
   author: "Herman Melville",
@@ -28,7 +28,7 @@ const book1: Book = {
   isAvailable: true
 };
 
-const book2 = {
+const book2: book = {
   ISBN: "978-0-7432-7356-5",
   title: "The Adventures of Don Quixote",
   author: "Miguel de Cervantes",
@@ -37,7 +37,7 @@ const book2 = {
   isAvailable: false
 };
 
-const book3 = {
+const book3: book = {
   ISBN: "978-0-06-112008-4",
   title: "Metamorphosis",
   author: "Franz Kafka",
@@ -46,7 +46,7 @@ const book3 = {
   isAvailable: true
 };
 
-const book4 = {
+const book4: book = {
   ISBN: "978-0-452-28423-4",
   title: "The Odyssey",
   author: "Homer",
@@ -55,7 +55,7 @@ const book4 = {
   isAvailable: true
 };
 
-const book5 = {
+const book5: book = {
   ISBN: "978-0-14-044913-6",
   title: "Metamorphosis?",
   author: "Shindo L",

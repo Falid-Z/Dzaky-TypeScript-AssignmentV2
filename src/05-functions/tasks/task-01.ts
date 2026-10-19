@@ -24,3 +24,17 @@
  * 5. Display every student's final grade.
 
  */
+function calculateFinalGrade(assignment: number, midterm: number, final: number): number {
+    const finalGrade = assignment * 0.3 + midterm * 0.3 + final * 0.4;
+    return finalGrade;
+}
+
+const alyaGrade = calculateFinalGrade(85, 80, 92);
+const budiGrade = calculateFinalGrade(78, 75, 81);
+const citraGrade = calculateFinalGrade(90, 88, 95);
+const nopalGrade = calculateFinalGrade(77, 77, 77);
+
+console.log(`Alya's final grade: ${alyaGrade}`);
+console.log(`Budi's final grade: ${budiGrade}`);
+console.log(`Citra's final grade: ${citraGrade}`);
+console.log(`Nopal's final grade: ${nopalGrade}`);
