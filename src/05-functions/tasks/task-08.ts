@@ -54,3 +54,81 @@ const submissions = [
         score: 96
     }
 ];
+
+function totalStudents(): number {
+    return submissions.length;
+}
+
+function submittedAssignments(): number {
+    let count = 0;
+    for (const submission of submissions) {
+        if (submission.submitted) {
+            count++;
+        }
+    }
+    return count;
+}
+
+function missingAssignments(): number {
+    return totalStudents() - submittedAssignments();
+}
+
+function passedStudents(): number {
+    let count = 0;
+    for (const submission of submissions) {
+        if (submission.submitted && submission.score >= 75) {
+            count++;
+        }
+    }
+    return count;
+}
+
+function requiringRevision(): number {
+    let count = 0;
+    for (const submission of submissions) {
+        if (submission.submitted && submission.score < 75) {
+            count++;
+        }
+    }
+    return count;
+}
+
+function averageScore(): number {
+    let totalScore = 0;
+    for (const submission of submissions) {
+        totalScore += submission.score;
+    }
+    return totalScore / totalStudents();
+}
+
+function highestScore(): number {
+    let highest = 0;
+    for (const submission of submissions) {
+        if (submission.score > highest) {
+            highest = submission.score;
+        }
+    }
+    return highest;
+}
+
+function lowestScore(): number {
+    let lowest = 100;
+    for (const submission of submissions) {
+        if (submission.submitted && submission.score < lowest) {
+            lowest = submission.score;
+        }
+    }
+    return lowest;
+}
+
+function submissionReport(): void {
+    console.log(`Total students: ${totalStudents()}`);
+    console.log(`Submitted assignments: ${submittedAssignments()}`);
+    console.log(`Missing assignments: ${missingAssignments()}`);
+    console.log(`Passed students: ${passedStudents()}`);
+    console.log(`Students requiring revision: ${requiringRevision()}`);
+    console.log(`Average score: ${averageScore()}`);
+    console.log(`Highest score: ${highestScore()}`);
+    console.log(`Lowest score: ${lowestScore()}`);
+}
+submissionReport();

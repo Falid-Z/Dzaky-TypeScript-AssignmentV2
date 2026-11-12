@@ -92,3 +92,116 @@ const enrollments = [
         duration: 20
     }
 ];
+
+function totalEnrollment(): number {
+    return enrollments.length;
+}
+
+function completedEnrollment(): number {
+    let count = 0;
+    for (const enrollment of enrollments) {
+        if (enrollment.completed) {
+            count++;
+        }
+    }
+    return count;
+}
+
+function incompleteEnrollment(): number {
+    return totalEnrollment() - completedEnrollment();
+}
+
+function completionPercentage(): number {
+    return (completedEnrollment() / totalEnrollment()) * 100;
+}
+
+function highestScore(): number {
+    let highest = enrollments[0].score;
+    for (const enrollment of enrollments) {
+        if (enrollment.score > highest) {
+            highest = enrollment.score;
+        }
+    }
+    return highest;
+}
+
+function lowestScore(): number {
+    let lowest = enrollments[0].score;
+    for (const enrollment of enrollments) {
+        if (enrollment.score < lowest) {
+            lowest = enrollment.score;
+        }
+    }
+    return lowest;
+}
+
+function averageScore(): number {
+    let totalScore = 0;
+    for (const enrollment of enrollments) {
+        totalScore += enrollment.score;
+    }
+    return totalScore / totalEnrollment();
+}
+
+function passingStudents(): number {
+    let count = 0;
+    for (const enrollment of enrollments) {
+        if (enrollment.score >= 75) {
+            count++;
+        }
+    }
+    return count;
+}
+
+function countStudentsByCourse(course: string): number {
+    let count = 0;
+    for (const enrollment of enrollments) {
+        if (enrollment.course === course) {
+            count++;
+        }
+    }
+    return count;
+}
+
+function averageScoreByCourse(course: string): number {
+    let totalScore = 0;
+    let count = 0;
+    for (const enrollment of enrollments) {
+        if (enrollment.course === course) {
+            totalScore += enrollment.score;
+            count++;
+        }
+    }
+    return count > 0 ? totalScore / count : 0;
+}
+
+function totalLearningHours(): number {
+    let totalHours = 0;
+    for (const enrollment of enrollments) {
+        totalHours += enrollment.duration;
+    }
+    return totalHours;
+}
+
+function averageLearningDuration(): number {
+    return totalLearningHours() / totalEnrollment();
+}
+
+
+
+console.log(`Total enrollments: ${totalEnrollment()}`);
+console.log(`Completed enrollments: ${completedEnrollment()}`);
+console.log(`Incomplete enrollments: ${incompleteEnrollment()}`);
+console.log(`Completion percentage: ${completionPercentage().toFixed(2)}%`);
+console.log(`Highest score: ${highestScore()}`);
+console.log(`Lowest score: ${lowestScore()}`);
+console.log(`Average score: ${averageScore().toFixed(2)}`);
+console.log(`TypeScript students: ${countStudentsByCourse("TypeScript")}`);
+console.log(`Average score for TypeScript: ${averageScoreByCourse("TypeScript").toFixed(2)}`);
+console.log(`Database students: ${countStudentsByCourse("Database")}`);
+console.log(`Average score for Database: ${averageScoreByCourse("Database").toFixed(2)}`);
+console.log(`Backend students: ${countStudentsByCourse("Backend")}`);
+console.log(`Average score for Backend: ${averageScoreByCourse("Backend").toFixed(2)}`);
+console.log(`Students with passing scores: ${passingStudents()}`);
+console.log(`Total learning hours: ${totalLearningHours()}`);
+console.log(`Average learning duration: ${averageLearningDuration().toFixed(2)} hours`);

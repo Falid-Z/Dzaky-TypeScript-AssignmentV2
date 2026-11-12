@@ -17,6 +17,31 @@ const attendances = [
     { name: "Alya", present: true },
     { name: "Budi", present: false },
     { name: "Citra", present: true },
-    { name: "Dimas", present: true },
-    { name: "Eka", present: false }
+    { name: "Dimsam", present: true },
+    { name: "Nopal", present: false }
 ];
+
+function printAttendanceReport(attendances: { name: string; present: boolean }[]): void {
+    let totalPresent = 0;
+    let totalAbsent = 0;
+    const absentStudents: string[] = [];
+
+    for (const student of attendances) {
+        if (student.present) {
+            totalPresent++;
+        } else {
+            totalAbsent++;
+            absentStudents.push(student.name);
+        }
+    }
+
+    console.log("Attendance Report:");
+    console.log(`Total Present: ${totalPresent}`);
+    console.log(`Total Absent: ${totalAbsent}`);
+    console.log("Names of Absent Students:");
+    for (const name of absentStudents) {
+        console.log(`- ${name}`);
+    }
+}
+
+printAttendanceReport(attendances);
